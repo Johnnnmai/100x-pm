@@ -76,7 +76,7 @@ docker build -t 100x-pm-local .
 docker run --name 100x-pm \
   -p 3100:3100 \
   -e HOST=0.0.0.0 \
-  -e PAPERCLIP_HOME=/100x-pm \
+  -e 100XPM_HOME=/100x-pm \
   -v "$(pwd)/data/docker-100x-pm:/100x-pm" \
   100x-pm-local
 ```
@@ -99,7 +99,7 @@ The server will automatically use embedded PostgreSQL and persist data at:
 Override home and instance:
 
 ```sh
-PAPERCLIP_HOME=/custom/path PAPERCLIP_INSTANCE_ID=dev pnpm 100x-pmai run
+100XPM_HOME=/custom/path PAPERCLIP_INSTANCE_ID=dev pnpm 100x-pmai run
 ```
 
 No Docker or external database is required for this mode.
@@ -122,7 +122,7 @@ When a local agent run has no resolved project/session workspace, 100X PM falls 
 
 - `~/.100x-pm/instances/default/workspaces/<agent-id>`
 
-This path honors `PAPERCLIP_HOME` and `PAPERCLIP_INSTANCE_ID` in non-default setups.
+This path honors `100XPM_HOME` and `PAPERCLIP_INSTANCE_ID` in non-default setups.
 
 ## Worktree-local Instances
 

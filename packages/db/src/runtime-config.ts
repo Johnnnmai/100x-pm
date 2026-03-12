@@ -41,31 +41,31 @@ function expandHomePrefix(value: string): string {
   return value;
 }
 
-function resolve100X PMHomeDir(): string {
-  const envHome = process.env.PAPERCLIP_HOME?.trim();
+function resolve100XPMHomeDir(): string {
+  const envHome = process.env["100XPM_HOME"]?.trim();
   if (envHome) return path.resolve(expandHomePrefix(envHome));
   return path.resolve(os.homedir(), ".100x-pm");
 }
 
-function resolve100X PMInstanceId(): string {
-  const raw = process.env.PAPERCLIP_INSTANCE_ID?.trim() || DEFAULT_INSTANCE_ID;
+function resolve100XPMInstanceId(): string {
+  const raw = process.env["100XPM_INSTANCE_ID"]?.trim() || DEFAULT_INSTANCE_ID;
   if (!INSTANCE_ID_RE.test(raw)) {
-    throw new Error(`Invalid PAPERCLIP_INSTANCE_ID '${raw}'.`);
+    throw new Error(`Invalid 100XPM_INSTANCE_ID '${raw}'.`);
   }
   return raw;
 }
 
 function resolveDefaultConfigPath(): string {
   return path.resolve(
-    resolve100X PMHomeDir(),
+    resolve100XPMHomeDir(),
     "instances",
-    resolve100X PMInstanceId(),
+    resolve100XPMInstanceId(),
     CONFIG_BASENAME,
   );
 }
 
 function resolveDefaultEmbeddedPostgresDir(): string {
-  return path.resolve(resolve100X PMHomeDir(), "instances", resolve100X PMInstanceId(), "db");
+  return path.resolve(resolve100XPMHomeDir(), "instances", resolve100XPMInstanceId(), "db");
 }
 
 function resolveHomeAwarePath(value: string): string {
@@ -85,14 +85,14 @@ function findConfigFileFromAncestors(startDir: string): string | null {
   }
 }
 
-function resolve100X PMConfigPath(): string {
-  if (process.env.PAPERCLIP_CONFIG?.trim()) {
-    return path.resolve(process.env.PAPERCLIP_CONFIG.trim());
+function resolve100XPMConfigPath(): string {
+  if (process.env["100XPM_CONFIG"]?.trim()) {
+    return path.resolve(process.env["100XPM_CONFIG"].trim());
   }
   return findConfigFileFromAncestors(process.cwd()) ?? resolveDefaultConfigPath();
 }
 
-function resolve100X PMEnvPath(configPath: string): string {
+function resolve100XPMEnvPath(configPath: string): string {
   return path.resolve(path.dirname(configPath), ENV_BASENAME);
 }
 
@@ -213,8 +213,8 @@ function readConfig(configPath: string): PartialConfig | null {
 }
 
 export function resolveDatabaseTarget(): ResolvedDatabaseTarget {
-  const configPath = resolve100X PMConfigPath();
-  const envPath = resolve100X PMEnvPath(configPath);
+  const configPath = resolve100XPMConfigPath();
+  const envPath = resolve100XPMEnvPath(configPath);
   const envEntries = readEnvEntries(envPath);
 
   const envUrl = process.env.DATABASE_URL?.trim();

@@ -8,7 +8,7 @@ const ORIGINAL_ENV = { ...process.env };
 describe("applyDataDirOverride", () => {
   beforeEach(() => {
     process.env = { ...ORIGINAL_ENV };
-    delete process.env.PAPERCLIP_HOME;
+    delete process.env.100XPM_HOME;
     delete process.env.PAPERCLIP_CONFIG;
     delete process.env.PAPERCLIP_CONTEXT;
     delete process.env.PAPERCLIP_INSTANCE_ID;
@@ -18,7 +18,7 @@ describe("applyDataDirOverride", () => {
     process.env = { ...ORIGINAL_ENV };
   });
 
-  it("sets PAPERCLIP_HOME and isolated default config/context paths", () => {
+  it("sets 100XPM_HOME and isolated default config/context paths", () => {
     const home = applyDataDirOverride({
       dataDir: "~/100x-pm-data",
       config: undefined,
@@ -27,7 +27,7 @@ describe("applyDataDirOverride", () => {
 
     const expectedHome = path.resolve(os.homedir(), "100x-pm-data");
     expect(home).toBe(expectedHome);
-    expect(process.env.PAPERCLIP_HOME).toBe(expectedHome);
+    expect(process.env.100XPM_HOME).toBe(expectedHome);
     expect(process.env.PAPERCLIP_CONFIG).toBe(
       path.resolve(expectedHome, "instances", "default", "config.json"),
     );
@@ -72,7 +72,7 @@ describe("applyDataDirOverride", () => {
       { hasConfigOption: false, hasContextOption: false },
     );
 
-    expect(process.env.PAPERCLIP_HOME).toBe(path.resolve("/tmp/100x-pm-alt"));
+    expect(process.env.100XPM_HOME).toBe(path.resolve("/tmp/100x-pm-alt"));
     expect(process.env.PAPERCLIP_CONFIG).toBeUndefined();
     expect(process.env.PAPERCLIP_CONTEXT).toBeUndefined();
   });

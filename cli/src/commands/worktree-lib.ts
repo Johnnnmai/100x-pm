@@ -198,7 +198,7 @@ export function buildWorktreeConfig(input: {
 
 export function buildWorktreeEnvEntries(paths: WorktreeLocalPaths): Record<string, string> {
   return {
-    PAPERCLIP_HOME: paths.homeDir,
+    100XPM_HOME: paths.homeDir,
     PAPERCLIP_INSTANCE_ID: paths.instanceId,
     PAPERCLIP_CONFIG: paths.configPath,
     PAPERCLIP_CONTEXT: paths.contextPath,

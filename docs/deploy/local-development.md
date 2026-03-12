@@ -94,5 +94,5 @@ pnpm dev
 Override with environment variables:
 
 ```sh
-PAPERCLIP_HOME=/custom/path PAPERCLIP_INSTANCE_ID=dev pnpm 100x-pmai run
+100XPM_HOME=/custom/path PAPERCLIP_INSTANCE_ID=dev pnpm 100x-pmai run
 ```

@@ -4,8 +4,8 @@ import path from "node:path";
 const DEFAULT_INSTANCE_ID = "default";
 const INSTANCE_ID_RE = /^[a-zA-Z0-9_-]+$/;
 
-export function resolve100X PMHomeDir(): string {
-  const envHome = process.env.PAPERCLIP_HOME?.trim();
+export function resolve100XPMHomeDir(): string {
+  const envHome = process.env.100XPM_HOME?.trim();
   if (envHome) return path.resolve(expandHomePrefix(envHome));
   return path.resolve(os.homedir(), ".100x-pm");
 }
@@ -22,7 +22,7 @@ export function resolve100X PMInstanceId(override?: string): string {
 
 export function resolve100X PMInstanceRoot(instanceId?: string): string {
   const id = resolve100X PMInstanceId(instanceId);
-  return path.resolve(resolve100X PMHomeDir(), "instances", id);
+  return path.resolve(resolve100XPMHomeDir(), "instances", id);
 }
 
 export function resolveDefaultConfigPath(instanceId?: string): string {
@@ -30,7 +30,7 @@ export function resolveDefaultConfigPath(instanceId?: string): string {
 }
 
 export function resolveDefaultContextPath(): string {
-  return path.resolve(resolve100X PMHomeDir(), "context.json");
+  return path.resolve(resolve100XPMHomeDir(), "context.json");
 }
 
 export function resolveDefaultEmbeddedPostgresDir(instanceId?: string): string {
@@ -63,7 +63,7 @@ export function describeLocalInstancePaths(instanceId?: string) {
   const resolvedInstanceId = resolve100X PMInstanceId(instanceId);
   const instanceRoot = resolve100X PMInstanceRoot(resolvedInstanceId);
   return {
-    homeDir: resolve100X PMHomeDir(),
+    homeDir: resolve100XPMHomeDir(),
     instanceId: resolvedInstanceId,
     instanceRoot,
     configPath: resolveDefaultConfigPath(resolvedInstanceId),

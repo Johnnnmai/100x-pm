@@ -106,7 +106,7 @@ pnpm 100x-pmai allowed-hostname my-tailscale-host
 Override with:
 
 ```sh
-PAPERCLIP_HOME=/custom/home PAPERCLIP_INSTANCE_ID=dev pnpm 100x-pmai run
+100XPM_HOME=/custom/home PAPERCLIP_INSTANCE_ID=dev pnpm 100x-pmai run
 ```
 
 Or pass `--data-dir` directly on any command:

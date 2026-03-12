@@ -9,7 +9,7 @@ docker build -t 100x-pm-local . && \
 docker run --name 100x-pm \
   -p 3100:3100 \
   -e HOST=0.0.0.0 \
-  -e PAPERCLIP_HOME=/100x-pm \
+  -e 100XPM_HOME=/100x-pm \
   -v "$(pwd)/data/docker-100x-pm:/100x-pm" \
   100x-pm-local
 ```
@@ -81,7 +81,7 @@ If you want local adapter runs inside the container, pass API keys when starting
 docker run --name 100x-pm \
   -p 3100:3100 \
   -e HOST=0.0.0.0 \
-  -e PAPERCLIP_HOME=/100x-pm \
+  -e 100XPM_HOME=/100x-pm \
   -e OPENAI_API_KEY=... \
   -e ANTHROPIC_API_KEY=... \
   -v "$(pwd)/data/docker-100x-pm:/100x-pm" \

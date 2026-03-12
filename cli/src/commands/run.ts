@@ -12,7 +12,7 @@ import type { 100X PMConfig } from "../config/schema.js";
 import { readConfig } from "../config/store.js";
 import {
   describeLocalInstancePaths,
-  resolve100X PMHomeDir,
+  resolve100XPMHomeDir,
   resolve100X PMInstanceId,
 } from "../config/home.js";
 
@@ -34,7 +34,7 @@ export async function runCommand(opts: RunOptions): Promise<void> {
   const instanceId = resolve100X PMInstanceId(opts.instance);
   process.env.PAPERCLIP_INSTANCE_ID = instanceId;
 
-  const homeDir = resolve100X PMHomeDir();
+  const homeDir = resolve100XPMHomeDir();
   fs.mkdirSync(homeDir, { recursive: true });
 
   const paths = describeLocalInstancePaths(instanceId);

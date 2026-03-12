@@ -12,7 +12,7 @@ All environment variables that 100X PM uses for server configuration.
 | `PORT` | `3100` | Server port |
 | `HOST` | `127.0.0.1` | Server host binding |
 | `DATABASE_URL` | (embedded) | PostgreSQL connection string |
-| `PAPERCLIP_HOME` | `~/.100x-pm` | Base directory for all 100X PM data |
+| `100XPM_HOME` | `~/.100x-pm` | Base directory for all 100X PM data |
 | `PAPERCLIP_INSTANCE_ID` | `default` | Instance identifier (for multiple local instances) |
 | `PAPERCLIP_DEPLOYMENT_MODE` | `local_trusted` | Runtime mode override |
 

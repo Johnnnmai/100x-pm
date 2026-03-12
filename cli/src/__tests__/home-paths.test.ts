@@ -4,7 +4,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import {
   describeLocalInstancePaths,
   expandHomePrefix,
-  resolve100X PMHomeDir,
+  resolve100XPMHomeDir,
   resolve100X PMInstanceId,
 } from "../config/home.js";
 
@@ -16,7 +16,7 @@ describe("home path resolution", () => {
   });
 
   it("defaults to ~/.100x-pm and default instance", () => {
-    delete process.env.PAPERCLIP_HOME;
+    delete process.env.100XPM_HOME;
     delete process.env.PAPERCLIP_INSTANCE_ID;
 
     const paths = describeLocalInstancePaths();
@@ -25,10 +25,10 @@ describe("home path resolution", () => {
     expect(paths.configPath).toBe(path.resolve(os.homedir(), ".100x-pm", "instances", "default", "config.json"));
   });
 
-  it("supports PAPERCLIP_HOME and explicit instance ids", () => {
-    process.env.PAPERCLIP_HOME = "~/100x-pm-home";
+  it("supports 100XPM_HOME and explicit instance ids", () => {
+    process.env.100XPM_HOME = "~/100x-pm-home";
 
-    const home = resolve100X PMHomeDir();
+    const home = resolve100XPMHomeDir();
     expect(home).toBe(path.resolve(os.homedir(), "100x-pm-home"));
     expect(resolve100X PMInstanceId("dev_1")).toBe("dev_1");
   });

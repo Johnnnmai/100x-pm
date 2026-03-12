@@ -178,7 +178,7 @@ Default local instance root is `~/.100x-pm/instances/default`:
 Override base home or instance with env vars:
 
 ```sh
-PAPERCLIP_HOME=/custom/home PAPERCLIP_INSTANCE_ID=dev pnpm 100x-pmai run
+100XPM_HOME=/custom/home PAPERCLIP_INSTANCE_ID=dev pnpm 100x-pmai run
 ```
 
 ## Storage Configuration

@@ -182,7 +182,7 @@ describe("worktree helpers", () => {
     );
 
     const env = buildWorktreeEnvEntries(paths);
-    expect(env.PAPERCLIP_HOME).toBe(path.resolve("/tmp/100x-pm-worktrees"));
+    expect(env.100XPM_HOME).toBe(path.resolve("/tmp/100x-pm-worktrees"));
     expect(env.PAPERCLIP_INSTANCE_ID).toBe("feature-worktree-support");
     expect(env.PAPERCLIP_IN_WORKTREE).toBe("true");
     expect(formatShellExports(env)).toContain("export PAPERCLIP_INSTANCE_ID='feature-worktree-support'");
