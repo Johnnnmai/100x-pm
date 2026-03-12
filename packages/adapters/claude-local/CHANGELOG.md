@@ -1,0 +1,68 @@
+# @100x-pmai/adapter-claude-local
+
+## 0.3.0
+
+### Minor Changes
+
+- Stable release preparation for 0.3.0
+
+### Patch Changes
+
+- Updated dependencies
+  - @100x-pmai/adapter-utils@0.3.0
+
+## 0.2.7
+
+### Patch Changes
+
+- Version bump (patch)
+- Updated dependencies
+  - @100x-pmai/adapter-utils@0.2.7
+
+## 0.2.6
+
+### Patch Changes
+
+- Version bump (patch)
+- Updated dependencies
+  - @100x-pmai/adapter-utils@0.2.6
+
+## 0.2.5
+
+### Patch Changes
+
+- Version bump (patch)
+- Updated dependencies
+  - @100x-pmai/adapter-utils@0.2.5
+
+## 0.2.4
+
+### Patch Changes
+
+- Version bump (patch)
+- Updated dependencies
+  - @100x-pmai/adapter-utils@0.2.4
+
+## 0.2.3
+
+### Patch Changes
+
+- Version bump (patch)
+- Updated dependencies
+  - @100x-pmai/adapter-utils@0.2.3
+
+## 0.2.2
+
+### Patch Changes
+
+- Version bump (patch)
+- Updated dependencies
+  - @100x-pmai/adapter-utils@0.2.2
+
+## 0.2.1
+
+### Patch Changes
+
+- Version bump (patch)
+- Updated dependencies
+  - @100x-pmai/adapter-utils@0.2.1
